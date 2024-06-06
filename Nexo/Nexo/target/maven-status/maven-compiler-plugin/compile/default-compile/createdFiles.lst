@@ -1,0 +1,4 @@
+com\mycompany\mycart\entities\Product.class
+com\mycompany\mycart\entities\Category.class
+com\mycompany\mycart\entities\User.class
+com\mycompany\nexo\helper\FactoryProvider.class
