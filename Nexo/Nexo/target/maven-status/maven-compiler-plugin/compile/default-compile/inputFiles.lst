@@ -1,4 +1,10 @@
-D:\Projects\Nexo\Nexo\src\main\java\com\mycompany\mycart\entities\Product.java
-D:\Projects\Nexo\Nexo\src\main\java\com\mycompany\nexo\helper\FactoryProvider.java
-D:\Projects\Nexo\Nexo\src\main\java\com\mycompany\mycart\entities\Category.java
-D:\Projects\Nexo\Nexo\src\main\java\com\mycompany\mycart\entities\User.java
+D:\Projects\Ecommerce\Ecommerce_Web\Nexo\Nexo\src\main\java\com\mycompany\nexo\helper\FactoryProvider.java
+D:\Projects\Ecommerce\Ecommerce_Web\Nexo\Nexo\src\main\java\com\mycompany\mycart\entities\Product.java
+D:\Projects\Ecommerce\Ecommerce_Web\Nexo\Nexo\src\main\java\com\mycompany\mycart\entities\User.java
+D:\Projects\Ecommerce\Ecommerce_Web\Nexo\Nexo\src\main\java\com\mycompany\nexo\dao\UserDao.java
+D:\Projects\Ecommerce\Ecommerce_Web\Nexo\Nexo\src\main\java\com\mycompany\mycart\servlets\RegisterServlet.java
+D:\Projects\Ecommerce\Ecommerce_Web\Nexo\Nexo\src\main\java\com\mycompany\nexo\dao\CategoryDao.java
+D:\Projects\Ecommerce\Ecommerce_Web\Nexo\Nexo\src\main\java\com\mycompany\mycart\servlets\ProductOparetionServlet.java
+D:\Projects\Ecommerce\Ecommerce_Web\Nexo\Nexo\src\main\java\com\mycompany\mycart\entities\Category.java
+D:\Projects\Ecommerce\Ecommerce_Web\Nexo\Nexo\src\main\java\com\mycompany\mycart\servlets\LogOutServlet.java
+D:\Projects\Ecommerce\Ecommerce_Web\Nexo\Nexo\src\main\java\com\mycompany\mycart\servlets\LoginServlet.java

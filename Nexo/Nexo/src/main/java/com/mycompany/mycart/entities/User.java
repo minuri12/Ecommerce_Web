@@ -33,12 +33,26 @@ public class User {
     @Column(length = 1500, name = "user_address")
     private String userAddress;
 
+@Column(name = "user_type")
+private String userType;
+
     // Default constructor
     public User() {
     }
 
-    // Parameterized constructor
-    public User(int userId, String userName, String userEmail, String userPassword, String userPhone, String userPic, String userAddress) {
+    // Constructor without userId
+    public User(String userName, String userEmail, String userPassword, String userPhone, String userPic, String userAddress, String userType) {
+        this.userName = userName;
+        this.userEmail = userEmail;
+        this.userPassword = userPassword;
+        this.userPhone = userPhone;
+        this.userPic = userPic;
+        this.userAddress = userAddress;
+this.userType=userType;
+    }
+
+    // Constructor with userId
+    public User(int userId, String userName, String userEmail, String userPassword, String userPhone, String userPic, String userAddress, String userType) {
         this.userId = userId;
         this.userName = userName;
         this.userEmail = userEmail;
@@ -46,6 +60,7 @@ public class User {
         this.userPhone = userPhone;
         this.userPic = userPic;
         this.userAddress = userAddress;
+this.userType=userType;
     }
 
     // Getters and setters
@@ -104,6 +119,18 @@ public class User {
     public void setUserAddress(String userAddress) {
         this.userAddress = userAddress;
     }
+
+
+// Getter method for userType
+public String getUserType() {
+    return userType;
+}
+
+// Setter method for userType
+public void setUserType(String userType) {
+    this.userType = userType;
+}
+
 
     // toString method
     @Override

@@ -12,19 +12,25 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="css/style.css">
+        <%@include file="components/common_css_js.jsp" %>
     </head>
-    <body>
-        <h1>Hello World!</h1>
+    <body >
+        <%@include file="components/navbar.jsp" %>
         
-        <%-- Retrieving the SessionFactory from FactoryProvider --%>
-        <% SessionFactory sessionFactory = FactoryProvider.getFactory(); %>
-        
-        <%-- Checking if the SessionFactory is not null --%>
-        <% if (sessionFactory != null) { %>
-            <p>SessionFactory retrieved successfully!</p>
-        <% } else { %>
-            <p>Error: Unable to retrieve SessionFactory!</p>
-        <% } %>
-        
+        <div class="Hero_container">
+            <div class="main">NE<span>X</span>O</div>
+            <p class="body_text">
+                Welcome to Nexo, your one-stop online shop for all things amazing! 
+                Discover an extensive range of high-quality products at unbeatable prices. 
+                Whether you're looking for the latest tech gadgets, fashionable apparel, or home 
+                essentials, Nexo has it all. Shop with confidence, enjoy fast shipping, and experience 
+                exceptional customer service. Start your shopping journey with Nexo today – where convenience 
+                meets satisfaction!
+            </p>
+           <a href="user_register.jsp"> <button class="main_button" hr>Register Now</button></a>                                                                                                                                
+           
+        </div>
+      
     </body>
 </html>

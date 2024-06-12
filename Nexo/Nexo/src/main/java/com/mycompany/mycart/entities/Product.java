@@ -32,6 +32,9 @@ public class Product {
     @Column(name = "p_discount")
     private int pDiscount;
 
+
+    private int pQuantity;
+
     @ManyToOne
     @JoinColumn(name = "category_id") // Specify the foreign key column
     private Category category;
@@ -41,13 +44,14 @@ public class Product {
     }
 
     // Parameterized constructor
-    public Product(String pName, String pDesc, String pPhoto, double pPrice, int pDiscount, Category category) {
+    public Product(String pName, String pDesc, String pPhoto, double pPrice, int pDiscount,int pQuantity, Category category) {
         this.pName = pName;
         this.pDesc = pDesc;
         this.pPhoto = pPhoto;
         this.pPrice = pPrice;
         this.pDiscount = pDiscount;
         this.category = category;
+        this.pQuantity = pQuantity;
     }
 
     // Getters and setters

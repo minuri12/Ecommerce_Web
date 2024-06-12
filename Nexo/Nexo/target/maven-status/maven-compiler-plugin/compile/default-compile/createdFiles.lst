@@ -1,4 +1,10 @@
+com\mycompany\nexo\dao\UserDao.class
 com\mycompany\mycart\entities\Product.class
-com\mycompany\mycart\entities\Category.class
 com\mycompany\mycart\entities\User.class
+com\mycompany\mycart\servlets\LoginServlet.class
+com\mycompany\mycart\servlets\LogOutServlet.class
 com\mycompany\nexo\helper\FactoryProvider.class
+com\mycompany\mycart\servlets\ProductOparetionServlet.class
+com\mycompany\nexo\dao\CategoryDao.class
+com\learn\mycart\servlets\RegisterServlet.class
+com\mycompany\mycart\entities\Category.class
