@@ -1,8 +1,12 @@
 package com.mycompany.nexo.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query; // Import from org.hibernate package
+
 import com.mycompany.mycart.entities.Category;
 import com.mycompany.nexo.helper.FactoryProvider;
 
@@ -26,4 +30,70 @@ public class CategoryDao {
         session.close(); // Close the session
         return catId; // Return the generated category ID
     }
+
+public void updateCategory(Category category) {
+    System.out.println("Updating category: " + category.getCategoryTitle());
+    Session session = factory.openSession();
+    Transaction tx = session.beginTransaction();
+    try {
+        session.update(category);
+        tx.commit();
+        System.out.println("Category updated: " + category.getCategoryTitle());
+    } catch (Exception e) {
+        if (tx != null) tx.rollback();
+        e.printStackTrace();
+        System.out.println("Category update failed: " + e.getMessage());
+    } finally {
+        session.close();
+    }
+}
+
+
+public boolean deleteCategory(int categoryId) {
+        Transaction tx = null;
+        boolean result = false;
+        try (Session session = this.factory.openSession()) {
+            tx = session.beginTransaction();
+            Category category = session.get(Category.class, categoryId);
+            if (category != null) {
+                session.delete(category);
+                result = true;
+            }
+            tx.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (tx != null) {
+                tx.rollback();
+            }
+        }
+        return result;
+    }
+
+
+    public List<Category> getCategories(){
+        Session s=this.factory.openSession();
+        Query<Category> query=s.createQuery("from Category", Category.class); // Use org.hibernate.query.Query
+        List<Category> list=query.list();
+        return list;
+    }
+
+  
+
+public Category getCategoryById(int categoryId) {
+        Category cat = null;
+        Session session = null;
+        try {
+            session = this.factory.openSession();
+            cat = session.get(Category.class, categoryId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return cat;
+    }
+
+
 }

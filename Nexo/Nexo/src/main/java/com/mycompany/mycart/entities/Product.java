@@ -32,27 +32,14 @@ public class Product {
     @Column(name = "p_discount")
     private int pDiscount;
 
-
+    @Column(name = "p_quantity")
     private int pQuantity;
 
     @ManyToOne
     @JoinColumn(name = "category_id") // Specify the foreign key column
     private Category category;
 
-    // Default constructor
-    public Product() {
-    }
 
-    // Parameterized constructor
-    public Product(String pName, String pDesc, String pPhoto, double pPrice, int pDiscount,int pQuantity, Category category) {
-        this.pName = pName;
-        this.pDesc = pDesc;
-        this.pPhoto = pPhoto;
-        this.pPrice = pPrice;
-        this.pDiscount = pDiscount;
-        this.category = category;
-        this.pQuantity = pQuantity;
-    }
 
     // Getters and setters
     public int getPId() {
@@ -111,6 +98,36 @@ public class Product {
         this.category = category;
     }
 
+   public int getPQuantity() {
+    return pQuantity;
+    }
+
+    public void setPQuantity(int pQuantity) {
+    this.pQuantity = pQuantity;
+    }
+
+
+    // Default constructor
+    public Product() {
+    }
+
+    // Parameterized constructor
+    public Product(String pName, String pDesc, String pPhoto, double pPrice, int pDiscount,int pQuantity, Category category) {
+        this.pName = pName;
+        this.pDesc = pDesc;
+        this.pPhoto = pPhoto;
+        this.pPrice = pPrice;
+        this.pDiscount = pDiscount;
+        this.pQuantity = pQuantity;
+        this.category = category;
+
+    }
+
+        public double calculateDiscountedPrice() {
+        double discountedPrice = pPrice - (pPrice * pDiscount / 100.0);
+        return Math.round(discountedPrice * 100.0) / 100.0; // Round to 2 decimal places
+    }
+
     // toString method
     @Override
     public String toString() {
@@ -121,7 +138,9 @@ public class Product {
                 ", pPhoto='" + pPhoto + '\'' +
                 ", pPrice=" + pPrice +
                 ", pDiscount=" + pDiscount +
+                ", pQuantity=" + pQuantity +
                 ", category=" + category +
+                
                 '}';
     }
 }

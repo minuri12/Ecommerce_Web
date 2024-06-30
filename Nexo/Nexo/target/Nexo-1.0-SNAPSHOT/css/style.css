@@ -213,10 +213,10 @@ justify-content: center;
     
     text-align: center;
     background-color:#cccccc;
-    padding: 20px;
+    padding: 11px;
     border-radius: 20px;
     border: solid 2px black;
-    margin: 10px;
+    margin: 5px;
     width: 100%;
 }
 
@@ -231,8 +231,8 @@ justify-content: center;
    line-height: 5px;
    margin: 10px;
     width: 100%;
-    padding-bottom: 15px;
-    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
     margin-bottom: 0px;
 }
 
@@ -267,3 +267,7 @@ justify-content: center;
     
 }
 
+
+.modal {
+
+}

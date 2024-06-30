@@ -27,4 +27,28 @@
     <servlet-name>ProductOparetionServlet</servlet-name>
     <servlet-class>com.mycompany.mycart.servlets.ProductOparetionServlet</servlet-class>
 </servlet>
+
+
+<servlet>
+    <servlet-name>RemoveProductServlet</servlet-name>
+    <servlet-class>com.mycompany.mycart.servlets.RemoveProductServlet</servlet-class>
+</servlet>
+
+<servlet>
+    <servlet-name>RemoveCategoryServlet</servlet-name>
+    <servlet-class>com.mycompany.nexo.servlets.RemoveCategoryServlet</servlet-class>
+</servlet>
+
+<servlet>
+    <servlet-name>CategoryOperationServlet</servlet-name>
+    <servlet-class>com.mycompany.nexo.servlets.CategoryOperationServlet</servlet-class>
+</servlet>
+
+
+
+
+
+
 </web-app>
+
+
