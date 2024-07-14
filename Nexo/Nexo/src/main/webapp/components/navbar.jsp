@@ -2,7 +2,6 @@
 <%@ page import="com.mycompany.nexo.dao.ProductDao" %>
 <%@ page import="com.mycompany.nexo.dao.CategoryDao" %>
 
-
 <%
 User user = (User) session.getAttribute("current_user");
 %>
@@ -77,36 +76,37 @@ User user = (User) session.getAttribute("current_user");
 </div>
 
 <script>
-// Global variables to store product details
-let productId;
-let productName;
-let productQuantity;
-let productPrice;
-
 // Function to add item to cart
 function addToCart(pId, pName, pPrice, pQuantity) {
-  productId = pId;
-  productName = pName;
-  productPrice = pPrice;
-  productQuantity = pQuantity;
-  
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
   let existingProduct = cart.find(item => item.productId === pId);
 
+  // Check if the product quantity is available
+  if (pQuantity <= 0) {
+    alert("No product is available.");
+    return;
+  }
+
   if (existingProduct) {
-    // If product already exists in cart, increment quantity
-    existingProduct.productQuantity++;
+    // If product already exists in cart, increment quantity if available
+    if (pQuantity > existingProduct.productQuantity) {
+      existingProduct.productQuantity++;
+    } else {
+      alert("No more product is available.");
+      return;
+    }
   } else {
-    // If product does not exist in cart, add it
-    let newProduct = { productId: pId, productName: pName, productQuantity: pQuantity, productPrice: pPrice };
-    cart.push(newProduct);
+    // If product does not exist in cart, add it if available
+    if (pQuantity > 0) {
+      let newProduct = { productId: pId, productName: pName, productQuantity: 1, productPrice: pPrice };
+      cart.push(newProduct);
+    }
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
 
   // Show a success message
-  alert(`${productName} added to cart successfully!`);
+  alert(pName + " added to cart successfully!");
 
   // Update cart item count and modal
   updateCartItemCount();
